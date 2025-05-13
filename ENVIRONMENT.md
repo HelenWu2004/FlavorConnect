@@ -1,4 +1,4 @@
-# FlavorConnect Environment Setup Guide
+<!-- # FlavorConnect Environment Setup Guide
 
 This document explains how to set up and use environment variables for sensitive information in the FlavorConnect project.
 
@@ -155,4 +155,4 @@ If environment variables aren't being loaded:
 - [FastAPI Environment Variables](https://fastapi.tiangolo.com/advanced/settings/)
 - [Next.js Environment Variables](https://nextjs.org/docs/basic-features/environment-variables)
 - [Docker Environment Variables](https://docs.docker.com/compose/environment-variables/)
-- [Python dotenv Documentation](https://pypi.org/project/python-dotenv/) 
+- [Python dotenv Documentation](https://pypi.org/project/python-dotenv/)  -->

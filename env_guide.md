@@ -1,4 +1,4 @@
-# FlavorConnect Environment Variables Guide
+<!-- # FlavorConnect Environment Variables Guide
 
 This guide explains how to move sensitive information like API keys, database credentials, and other secrets to `.env` files to improve the security of your FlavorConnect project.
 
@@ -93,4 +93,4 @@ The script updates `docker-compose.yml` to use the `.env` files directly. Altern
 
 For more information about environment variables in:
 - FastAPI: https://fastapi.tiangolo.com/advanced/settings/
-- Next.js: https://nextjs.org/docs/basic-features/environment-variables 
+- Next.js: https://nextjs.org/docs/basic-features/environment-variables  -->
