@@ -5,13 +5,14 @@ function PinImage({pinDetail}) {
 
   return (
     <div>
-      <Image src={pinDetail.image}
-      alt={pinDetail.title}
-      width={1000}
-      height={1000}
-    
-      className='rounded-2xl'
-      />
+    {pinDetail.image ? (
+  <Image
+    src={pinDetail.image}
+    alt={pinDetail.title || "Recipe Image"}
+    width={1000}
+    height={1000}
+  />
+) : null}
 
     </div>
   )

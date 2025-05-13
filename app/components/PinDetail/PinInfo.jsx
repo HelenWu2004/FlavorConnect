@@ -7,16 +7,31 @@ function PinInfo({pinDetail}) {
     email:pinDetail.email,
     image:pinDetail.userImage
   }
+  const ingredients = pinDetail.link
+  ? pinDetail.link.split(',').map(item => item.trim())
+  : [];
+
   return (
     <div>
-      <h2 className='text-[30px] font-bold mb-10'>{pinDetail.title}</h2>
+      <h2 className="text-[30px] font-bold mb-10">{pinDetail.title}</h2>
       <UserTag user={user} />
-      <h2 className='mt-10'>{pinDetail.desc}</h2>
-      <button className='p-2 bg-[#e9e9e9] px-5 text-[23px]
-      mt-10 rounded-full hover:scale-105 transition-all'
-      onClick={()=>window.open(pinDetail.link)}>Open Url</button>
+
+      <h1 className="mt-10 font-semibold text-xl">Instructions:</h1>
+      <p className="mt-2">{pinDetail.desc}</p>
+
+      <h1 className="mt-10 font-semibold text-xl">Ingredients:</h1>
+      <div className="flex flex-wrap gap-2 mt-2">
+        {ingredients.map((ingredient, index) => (
+          <span
+            key={index}
+            className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full shadow-sm"
+          >
+            {ingredient}
+          </span>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
 export default PinInfo

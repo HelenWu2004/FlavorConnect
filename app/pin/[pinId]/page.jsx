@@ -14,7 +14,7 @@ function PinDetail({params}) {
     getPinDetail();
   },[])
  const getPinDetail=async()=>{
-      const docRef = doc(db, 'pinterest-post',params.pinId );
+      const docRef = doc(db, 'recipe-post-test',params.pinId );
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
        
