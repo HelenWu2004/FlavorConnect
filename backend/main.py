@@ -6,9 +6,10 @@ import requests
 import os
 from pydantic import BaseModel
 from search_engine import OptimizedSearchEngine
-from routers.chatbot import router as chatbot_router
+# from routers.chatbot import router as chatbot_router
 import json
 from fastapi.responses import JSONResponse
+# import config  # Import the new config module
 
 
 app = FastAPI(title="FlavorConnect API", description="Backend API for FlavorConnect")
@@ -83,15 +84,15 @@ async def search_recipes(query: str, number: int = 50):
         # except Exception as e:
         #     raise HTTPException(status_code=500, detail=f"Search error: {str(e)}")
 
-def format_spoonacular_recipe(recipe: Dict[str, Any]) -> Dict[str, Any]:
-    """Format Spoonacular recipe data to match our schema"""
-    return {
-        'Title': recipe.get('title', ''),
-        'Image': recipe.get('image', ''),
-        'Instructions': recipe.get('instructions', ''),
-        'Ingredients': [ingredient.get('original', '') for ingredient in recipe.get('extendedIngredients', [])],
-        'relevance_score': 1.0  # Spoonacular results don't have a relevance score
-    }
+# def format_spoonacular_recipe(recipe: Dict[str, Any]) -> Dict[str, Any]:
+#     """Format Spoonacular recipe data to match our schema"""
+#     return {
+#         'Title': recipe.get('title', ''),
+#         'Image': recipe.get('image', ''),
+#         'Instructions': recipe.get('instructions', ''),
+#         'Ingredients': [ingredient.get('original', '') for ingredient in recipe.get('extendedIngredients', [])],
+#         'relevance_score': 1.0  # Spoonacular results don't have a relevance score
+#     }
 
 # Include routers
 # app.include_router(users.router)
@@ -118,31 +119,31 @@ async def health_check():
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True) 
 
-from fastapi import WebSocket, WebSocketDisconnect
+# from fastapi import WebSocket, WebSocketDisconnect
 
-class ConnectionManager:
-    def __init__(self):
-        self.active_connections: list[WebSocket] = []
+# class ConnectionManager:
+#     def __init__(self):
+#         self.active_connections: list[WebSocket] = []
 
-    async def connect(self, websocket: WebSocket):
-        await websocket.accept()
-        self.active_connections.append(websocket)
+#     async def connect(self, websocket: WebSocket):
+#         await websocket.accept()
+#         self.active_connections.append(websocket)
 
-    def disconnect(self, websocket: WebSocket):
-        self.active_connections.remove(websocket)
+#     def disconnect(self, websocket: WebSocket):
+#         self.active_connections.remove(websocket)
 
-    async def broadcast(self, message: str):
-        for connection in self.active_connections:
-            await connection.send_text(message)
+#     async def broadcast(self, message: str):
+#         for connection in self.active_connections:
+#             await connection.send_text(message)
 
-manager = ConnectionManager()
+# manager = ConnectionManager()
 
-@app.websocket("/ws/chat")
-async def websocket_endpoint(websocket: WebSocket):
-    await manager.connect(websocket)
-    try:
-        while True:
-            data = await websocket.receive_text()
-            await manager.broadcast(f"Message: {data}")
-    except WebSocketDisconnect:
-        manager.disconnect(websocket)
+# @app.websocket("/ws/chat")
+# async def websocket_endpoint(websocket: WebSocket):
+#     await manager.connect(websocket)
+#     try:
+#         while True:
+#             data = await websocket.receive_text()
+#             await manager.broadcast(f"Message: {data}")
+#     except WebSocketDisconnect:
+#         manager.disconnect(websocket)

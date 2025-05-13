@@ -73,7 +73,7 @@ function Header() {
   return (
     <div className='flex justify-between 
      gap-3 md:gap-2 items-center p-6 '>
-        <Image src='/logo.png' alt='logo'
+        <Image src='/logo.png' alt='FlavorConnect logo'
         width={60} height={60} onClick={()=>router.push('/')}
         className='hover:bg-gray-300 p-2
         rounded-full cursor-pointer'/>
