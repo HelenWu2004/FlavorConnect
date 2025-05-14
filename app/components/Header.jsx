@@ -120,7 +120,7 @@ function Header() {
         <HiSearch className='text-[25px] 
         text-gray-500 md:hidden'/>
         <HiBell className='text-[25px] md:text-[60px] text-gray-500 cursor-pointer'/>
-        <HiChat className='text-[25px] md:text-[60px] text-gray-500 cursor-pointer'/>
+        <HiChat className='text-[25px] md:text-[60px] text-gray-500 cursor-pointer' onClick={()=>router.push('/chatbot')}/>
       {session?.user?  
       <Image src={session.user.image} 
        onClick={()=>router.push('/'+session.user.email)}
