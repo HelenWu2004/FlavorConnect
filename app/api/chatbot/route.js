@@ -3,7 +3,7 @@ import OpenAI from 'openai';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || 'YOUR_OPENAI_API_KEY', // Please replace with your API key
+  apiKey: process.env.OPENAI_API_KEY || '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', // Please replace with your API key
 });
 
 // Function to search for recipes based on query
