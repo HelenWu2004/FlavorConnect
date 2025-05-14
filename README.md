@@ -8,8 +8,6 @@ FlavorConnect is a modern recipe sharing and social networking application that 
 - **Recipe Management**: Create, browse, and search recipes with detailed information
 - **Visual Recipe Sharing**: Pinterest-style pin interface for recipe discovery
 - **Advanced Search**: AI-powered search engine using Word2Vec for semantic recipe search
-- **Social Interaction**: Comments, favorites, and user follows
-- **Real-time Chat**: Connect with other users through individual and group chats
 - **Responsive UI**: Beautiful interface built with Next.js and Tailwind CSS
 
 ## 🔧 Tech Stack
@@ -28,8 +26,7 @@ FlavorConnect is a modern recipe sharing and social networking application that 
 - [Uvicorn](https://www.uvicorn.org/) - ASGI server
 
 ### Databases
-- [MySQL](https://www.mysql.com/) - Relational database for users, recipes, comments
-- [MongoDB](https://www.mongodb.com/) - NoSQL database for chat functionality
+- Firebase
 
 ### Deployment
 - [Docker](https://www.docker.com/) - Containerization platform
@@ -51,7 +48,6 @@ FlavorConnect is a modern recipe sharing and social networking application that 
 3. Access the application:
    - Frontend: [http://localhost:3000](http://localhost:3000)
    - Backend API: [http://localhost:8000](http://localhost:8000)
-   - API Documentation: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ## 🧰 Development
 
@@ -64,8 +60,6 @@ npm install
 # Start development server
 npm run dev
 
-# Run tests
-npm test
 ```
 
 ### Backend Development
@@ -83,52 +77,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-## 📚 API Endpoints
 
-FlavorConnect's backend provides the following API endpoints:
-
-- **/users** - User management and profiles
-- **/recipes** - Recipe CRUD operations
-- **/comments** - User comments on recipes
-- **/favorites** - User favorite recipes
-- **/chat** - Real-time chat functionality
-- **/chatbot** - AI assistance for cooking
-- **/search** - Recipe search functionality
-- **/spoonacular** - Integration with Spoonacular API
-
-## 🧪 Testing
-
-The application includes both frontend and backend tests:
-
-```bash
-# Frontend tests
-npm test
-
-# Backend tests
-cd backend
-pytest
-```
-
-## 💻 Project Structure
-
-```
-FlavorConnect/
-├── app/                  # Next.js frontend
-│   ├── components/       # React components
-│   ├── api/              # API routes
-│   ├── [userId]/         # User profile page
-│   ├── pin/              # Pin detail page
-│   ├── chat/             # Chat interface
-│   ├── recipe/           # Recipe pages
-│   └── ...
-├── backend/              # FastAPI backend
-│   ├── routers/          # API route handlers
-│   ├── main.py           # Main application entry
-│   ├── search_engine.py  # Recipe search engine
-│   └── ...
-├── docker-compose.yml    # Docker configuration
-└── ...
-```
 
 ## 📋 Future Improvements
 
@@ -136,6 +85,7 @@ FlavorConnect/
 - Enhanced recipe recommendation system
 - Video tutorials and live streaming
 - Expanded social features
+- Chatroom feature
 - Internationalization and localization
 
 ## 📄 License
