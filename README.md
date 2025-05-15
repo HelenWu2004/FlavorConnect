@@ -96,7 +96,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 👥 Authors
-
-- Helen Wu - [GitHub Profile](https://github.com/HelenWu2004)
-
