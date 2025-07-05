@@ -47,7 +47,6 @@ FlavorConnect is a modern recipe sharing and social networking application that 
 
 3. Access the application:
    - Frontend: [http://localhost:3000](http://localhost:3000)
-   - Backend API: [http://localhost:8000](http://localhost:8000)
 
 ## 🧰 Development
 
